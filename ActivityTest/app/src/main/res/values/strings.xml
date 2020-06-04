@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ActivityTest</string>
+    <string name="button_1_1">显示调用Intent,跳转到Second Activity</string>
+    <string name="button_1_2">隐示调用Intent,跳转到Third Activity</string>
+    <string name="button_1_3">3D商详</string>
+    <string name="button_1_4">通天塔(指定Chrome浏览器打开)</string>
+    <string name="button_1_5">选择浏览器打开网页</string>
+    <string name="button_2_1">关闭 Second Activity</string>
+    <string name="button_2_2">拨打电话</string>
+    <string name="button_3_1">关闭 Third Activity</string>
+
+
+    <string name="add_item">Add</string>
+    <string name="remove_item">Remove</string>
+    <string name="close">关闭</string>
+</resources>
