@@ -2,6 +2,7 @@ package cn.imeixi.activitytest;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,14 +37,14 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        //隐示调用Intent
+        //隐示调用Intent，跳转后获取返回数据
         Button button2 = findViewById(R.id.button_1_2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent("ACTION_START");
                 intent.addCategory("MY_CATEGORY");
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -92,6 +93,21 @@ public class FirstActivity extends AppCompatActivity {
                 finish();  //销毁activity
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode){
+            case 1:
+                if (resultCode == RESULT_OK) {
+                    String returnMsg = data.getStringExtra("msg");
+                    Log.i(TAG, "onActivityResult: " + returnMsg);
+                    Toast.makeText(FirstActivity.this, returnMsg, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                Log.e(TAG, "onActivityResult: ");
+        }
     }
 
     //    创建菜单
