@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     private static final String TAG = "FirstActivity";
 
@@ -20,6 +20,10 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+        //运行模式
+        Log.d(TAG, this.toString());
+        Log.d(TAG, "Task id is: " + getTaskId());
+
         Button button1 = findViewById(R.id.button_1_1);
         button1.setOnClickListener(new View.OnClickListener() {
             //          显示调用Intent
@@ -86,6 +90,16 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
+        //活动启动模式
+        Button button6 = findViewById(R.id.button_1_6);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button buttonClose = findViewById(R.id.close);
         buttonClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +107,12 @@ public class FirstActivity extends AppCompatActivity {
                 finish();  //销毁activity
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
     }
 
     @Override

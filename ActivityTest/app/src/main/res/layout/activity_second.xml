@@ -7,15 +7,26 @@
     tools:context=".SecondActivity">
 
     <Button
-        android:id="@+id/button_2_1"
+        android:id="@+id/button_2_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_2_1"/>
+        android:text="@string/button_2_3"/>
+    <Button
+        android:id="@+id/button_2_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_2_4"/>
 
     <Button
         android:id="@+id/button_2_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_2_2"/>
+
+    <Button
+        android:id="@+id/button_2_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_2_1"/>
 
 </LinearLayout>
